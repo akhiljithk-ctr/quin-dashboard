@@ -24,7 +24,7 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: calc(10px * var(--inverse-scale, 1));
     flex: 1;
   }
 

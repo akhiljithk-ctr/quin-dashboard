@@ -5,17 +5,19 @@
   @include card;
   min-height: 0;
   min-width: calc(712px * var(--inverse-scale, 1));
+  max-width: 569.6px;
   width: 100%;
   overflow: hidden;
+  padding: 11px 13px 8px 13px;
 
   &__header {
     flex-shrink: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   &__title {
     @include card-header;
-    font-size: calc(#{$fs-md} * var(--inverse-scale, 1));
+    font-size: calc(16px * var(--inverse-scale, 1));
     margin: 0;
   }
 
@@ -26,19 +28,57 @@
 
   &__stats {
     display: flex;
-    gap: 48px;
+    justify-content: space-between;
+    align-items: flex-start;
     flex-shrink: 0;
-    margin-bottom: 8px;
+    position: relative;
+    padding-bottom: 4px;
+    margin-bottom: 18px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #d2d2d2;
+      border-radius: 1px;
+    }
+  }
+
+  &__stat {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &:first-child {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 2.5px;
+        background-color: #00bcd4;
+        border-radius: 999px;
+        z-index: 1;
+      }
+    }
   }
 
   &__stat-value {
-    font-size: calc(#{$fs-xxl} * var(--inverse-scale, 1));
-    font-weight: 400;
+    font-size: calc(36px * var(--inverse-scale, 1));
+    font-weight: 300;
     line-height: 1;
   }
 
   &__stat-meta {
-    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__delta {
@@ -50,7 +90,7 @@
     }
 
     &--up {
-      color: $color-success;
+      color: $color-teal;
     }
   }
 
@@ -68,7 +108,7 @@
   &__legend {
     display: flex;
     gap: 16px;
-    justify-content: center;
+    justify-content: space-between;
     flex-shrink: 0;
     margin-top: 10px;
     font-size: calc(#{$fs-xs} * var(--inverse-scale, 1));
@@ -79,6 +119,9 @@
     display: flex;
     align-items: center;
     gap: 6px;
+    font-family: $font-family-mono;
+    font-weight: bold;
+    font-size: 10px;
   }
 
   &__dot {
@@ -88,6 +131,7 @@
 
     &--service {
       background: $color-teal;
+      border: 1px solid #000;
     }
 
     &--out {

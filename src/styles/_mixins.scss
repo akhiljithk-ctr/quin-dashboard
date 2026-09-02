@@ -3,7 +3,7 @@
 @mixin card {
   background: $color-surface;
   border: 1px solid $color-border;
-  border-radius: $radius-lg;
+  border-radius: 10px;
   box-shadow: $shadow-card;
   padding: $card-padding;
   display: flex;

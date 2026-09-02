@@ -17,7 +17,7 @@
   &__axis-label {
     font-size: 11px;
     color: $color-text-muted;
-    font-family: $font-family;
+    font-family: $font-family-mono;
     line-height: 1;
     transform: translateY(-50%);
 
@@ -54,24 +54,24 @@
 
   &__area {
     &--service {
-      fill: $color-teal-light;
+      fill: #00C8DC;
       fill-opacity: 0.9;
     }
 
     &--out {
-      fill: $color-pink;
+      fill: #FF52A8;
       fill-opacity: 0.9;
     }
 
     &--decommissioned {
-      fill: $color-navy-light;
+      fill: #12809c;
       fill-opacity: 0.95;
     }
   }
 
   &__line {
     fill: none;
-    stroke-width: 1.5;
+    stroke-width: 0;
 
     &--service {
       stroke: $color-teal;
@@ -96,7 +96,7 @@
   &__month-label {
     font-size: 11px;
     color: $color-text-muted;
-    font-family: $font-family;
+    font-family: $font-family-mono;
     line-height: 1;
   }
 }

@@ -18,15 +18,15 @@ function InventoryOverviewCard() {
           <div className="inventory-overview-card__stat-value">8437</div>
           <div className="inventory-overview-card__stat-meta">
             <span className="inventory-overview-card__delta inventory-overview-card__delta--up">+3% L30D</span>
+            <div className="inventory-overview-card__stat-label">Total Inventory</div>
           </div>
-          <div className="inventory-overview-card__stat-label">Total Inventory</div>
         </div>
         <div className="inventory-overview-card__stat">
           <div className="inventory-overview-card__stat-value">2062</div>
           <div className="inventory-overview-card__stat-meta">
             <span className="inventory-overview-card__delta inventory-overview-card__delta--down">-10% L30D</span>
+            <span className="inventory-overview-card__stat-label">Total Users</span>
           </div>
-          <div className="inventory-overview-card__stat-label">Total ...</div>
         </div>
       </div>
 

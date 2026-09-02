@@ -29,7 +29,7 @@
   &__row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     gap: 9px;
     max-height: 218.4px;
 
@@ -38,9 +38,9 @@
     //   min-height: 0;
     // }
 
-    // &--1 {
-    //   flex: 273 1 0;
-    // }
+    &--1 {
+      min-height: calc(273px * var(--inverse-scale, 1));
+    }
 
     // &--2 {
     //   flex: 222 1 0;
