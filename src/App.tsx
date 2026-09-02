@@ -25,17 +25,28 @@ function App() {
             <InventoryOverviewCard />
           </div>
 
-          <div className="app__row app__row--2">
-            <InventoryUtilisationCard />
+          <div className="app_section_2">
+            
+          <div className='app_section_2_pos_1'>
+            <div className='pos_1_sec_1'>
+               <InventoryUtilisationCard />
+               <InventoryFailuresCard />
+            </div>
+            <div className='pos_1_sec_2'>
             <InventoryComplianceCard />
-            <InventoryStatusCard />
-            <UserProfileCompletionCard />
+            </div>
           </div>
 
-          <div className="app__row app__row--3">
-            <InventoryFailuresCard />
-            <InventoryLifecycleCard />
-            <LifecycleTabsCard />
+          <div className='app_section_2_pos_2'>
+            <div className='pos_2_sec_1'>
+              <InventoryStatusCard />
+              <UserProfileCompletionCard />
+            </div>
+            <div className='pos_2_sec_2'>
+              <InventoryLifecycleCard />
+            </div>
+          </div>
+            
           </div>
         </div>
       </div>

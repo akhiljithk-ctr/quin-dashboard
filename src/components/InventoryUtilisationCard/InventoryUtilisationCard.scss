@@ -3,8 +3,8 @@
 
 .inventory-utilisation-card {
   @include card;
-  min-height: 0;
   overflow: hidden;
+  min-width: calc(427.8px * var(--inverse-scale, 1));
 
   &__header {
     flex-shrink: 0;
