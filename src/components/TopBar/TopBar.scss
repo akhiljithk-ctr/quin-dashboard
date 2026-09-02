@@ -1,0 +1,101 @@
+@use '../../styles/variables' as *;
+
+.topbar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px 11px 0px;
+
+  &__workspace-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #7B7B7B3D;
+    border-radius: $radius-sm;
+    font-size: $fs-sm;
+    font-weight: 400;
+    color: $color-text-primary;
+  }
+
+  &__workspace-icon {
+    width: 14px;
+    height: 14px;
+    color: #000000;
+    flex-shrink: 0;
+  }
+
+  &__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__notification {
+    position: relative;
+    color: $color-text-secondary;
+    border: 1px solid#7B7B7B;
+
+    svg {
+      width: 16px;
+      height: 18px;
+      color: black;
+    }
+  }
+
+  &__notification-dot {
+    position: absolute;
+    top: 8.8px;
+    right: 7.1px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: red;
+  }
+
+  &__date-range {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1.5px solid #7B7B7B;
+    border-radius: $radius-sm;
+    background: $color-surface;
+    font-size: $fs-sm;
+    color: $color-text-primary;
+  }
+
+  &__chevron {
+    width: 10px;
+    height: 6px;
+    color: black;
+    flex-shrink: 0;
+  }
+
+  &__avatars {
+    display: flex;
+  }
+
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fs-sm;
+    font-weight: 600;
+    color: #fff;
+    border: 2px solid $color-surface;
+
+    &--m {
+      background: $color-navy-light;
+      z-index: 1;
+    }
+
+    &--j {
+      background: $color-pink;
+      margin-left: -8px;
+    }
+  }
+}

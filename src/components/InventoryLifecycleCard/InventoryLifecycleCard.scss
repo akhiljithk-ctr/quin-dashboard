@@ -1,0 +1,59 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.inventory-lifecycle-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__stat {
+    flex-shrink: 0;
+    margin-bottom: 8px;
+  }
+
+  &__stat-value {
+    font-size: $fs-xxl;
+    font-weight: 700;
+    line-height: 1;
+    display: inline;
+  }
+
+  &__delta {
+    font-size: $fs-xs;
+    font-weight: 600;
+    margin-left: 8px;
+
+    &--up {
+      color: $color-success;
+    }
+
+    &--down {
+      color: $color-danger;
+    }
+  }
+
+  &__stat-label {
+    margin-top: 2px;
+    font-size: $fs-sm;
+    color: $color-text-secondary;
+  }
+
+  &__chart-placeholder {
+    @include chart-placeholder;
+  }
+}

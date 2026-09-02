@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+@mixin card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+  padding: $card-padding;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin card-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: $fs-md;
+  font-weight: 600;
+  color: $color-text-primary;
+  margin-bottom: 12px;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin chart-placeholder {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed $color-border;
+  border-radius: $radius-md;
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(46, 196, 198, 0.04),
+    rgba(46, 196, 198, 0.04) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+  color: $color-text-muted;
+  font-size: $fs-sm;
+  text-align: center;
+  padding: 12px;
+}

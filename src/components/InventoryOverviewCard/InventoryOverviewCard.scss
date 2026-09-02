@@ -1,0 +1,97 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.inventory-overview-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 48px;
+    flex-shrink: 0;
+    margin-bottom: 8px;
+  }
+
+  &__stat-value {
+    font-size: $fs-xxl;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__stat-meta {
+    margin-top: 4px;
+  }
+
+  &__delta {
+    font-size: $fs-xs;
+    font-weight: 600;
+
+    &--down {
+      color: $color-danger;
+    }
+
+    &--up {
+      color: $color-success;
+    }
+  }
+
+  &__stat-label {
+    margin-top: 2px;
+    font-size: $fs-sm;
+    color: $color-text-secondary;
+  }
+
+  &__chart-placeholder {
+    @include chart-placeholder;
+  }
+
+  &__legend {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 10px;
+    font-size: $fs-xs;
+    color: $color-text-secondary;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &--service {
+      background: $color-teal;
+    }
+
+    &--out {
+      background: $color-pink;
+    }
+
+    &--decommissioned {
+      background: $color-navy-light;
+    }
+  }
+}

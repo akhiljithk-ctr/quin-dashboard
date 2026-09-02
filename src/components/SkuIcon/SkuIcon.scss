@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+.sku-icon {
+  flex-shrink: 0;
+  border-radius: $radius-sm;
+  background: $color-bg;
+  color: $color-text-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 60%;
+    height: 60%;
+  }
+}

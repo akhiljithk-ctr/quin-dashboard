@@ -1,0 +1,147 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.inventory-compliance-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__stat {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__stat-value {
+    font-size: $fs-xxl;
+    font-weight: 700;
+    line-height: 1;
+    display: inline;
+  }
+
+  &__delta {
+    font-size: $fs-xs;
+    font-weight: 600;
+    margin-left: 8px;
+
+    &--down {
+      color: $color-danger;
+    }
+
+    &--up {
+      color: $color-success;
+    }
+  }
+
+  &__stat-label {
+    margin-top: 2px;
+    font-size: $fs-sm;
+    color: $color-text-secondary;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 4px;
+    background: $color-bg;
+    border-radius: $radius-sm;
+    padding: 3px;
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__tab {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 4px 0;
+    font-size: $fs-xs;
+    font-weight: 600;
+    color: $color-text-secondary;
+    border-radius: $radius-sm;
+
+    &--active {
+      background: $color-surface;
+      color: $color-text-primary;
+      box-shadow: $shadow-card;
+    }
+  }
+
+  &__list-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: $fs-xs;
+    color: $color-text-muted;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-right: 4px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-border;
+      border-radius: $radius-pill;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: auto 1fr 70px 34px;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  &__row-name {
+    @include ellipsis;
+    font-size: $fs-xs;
+    color: $color-text-primary;
+    font-weight: 500;
+  }
+
+  &__row-value {
+    color: $color-text-secondary;
+    font-weight: 600;
+    font-size: $fs-xs;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  &__bar {
+    height: 5px;
+    border-radius: $radius-pill;
+    background: $color-bg;
+    overflow: hidden;
+  }
+
+  &__bar-fill {
+    height: 100%;
+    background: $color-teal;
+    border-radius: $radius-pill;
+  }
+}

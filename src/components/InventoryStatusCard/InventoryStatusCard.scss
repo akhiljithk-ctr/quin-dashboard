@@ -1,0 +1,120 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.inventory-status-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__row-count {
+    width: 34px;
+    flex-shrink: 0;
+    font-size: $fs-sm;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  &__row-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__row-name {
+    font-size: 10px;
+    color: $color-text-secondary;
+    margin-bottom: 3px;
+    @include ellipsis;
+  }
+
+  &__bar {
+    display: flex;
+    height: 6px;
+    border-radius: $radius-pill;
+    overflow: hidden;
+    background: $color-bg;
+  }
+
+  &__bar-seg {
+    height: 100%;
+
+    &--service {
+      background: $color-teal;
+    }
+
+    &--out {
+      background: $color-pink;
+    }
+
+    &--decommissioned {
+      background: $color-navy-light;
+    }
+  }
+
+  &__legend {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid $color-border;
+    font-size: 10px;
+    color: $color-text-secondary;
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  &__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    &--service {
+      background: $color-teal;
+    }
+
+    &--out {
+      background: $color-pink;
+    }
+
+    &--decommissioned {
+      background: $color-navy-light;
+    }
+  }
+}

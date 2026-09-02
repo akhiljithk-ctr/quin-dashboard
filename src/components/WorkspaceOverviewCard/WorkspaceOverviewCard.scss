@@ -1,0 +1,138 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.workspace-overview-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 32px;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+  }
+
+  &__stat-value {
+    font-size: $fs-xxl;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__stat-meta {
+    margin-top: 2px;
+  }
+
+  &__delta {
+    font-size: $fs-xs;
+    font-weight: 600;
+    line-height: 1.2;
+
+    &--down {
+      color: $color-danger;
+    }
+
+    &--up {
+      color: $color-success;
+    }
+  }
+
+  &__stat-label {
+    margin-top: 1px;
+    font-size: $fs-sm;
+    color: $color-text-secondary;
+    line-height: 1.2;
+  }
+
+  &__table {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $color-border;
+    padding-top: 6px;
+  }
+
+  &__table-head {
+    display: grid;
+    grid-template-columns: 1fr 60px 70px;
+    font-size: $fs-xs;
+    color: $color-text-muted;
+    font-weight: 600;
+    padding-bottom: 4px;
+    flex-shrink: 0;
+  }
+
+  &__table-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 60px 70px;
+    align-items: center;
+  }
+
+  &__row-sku {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__row-text {
+    min-width: 0;
+  }
+
+  &__row-name {
+    font-size: $fs-sm;
+    font-weight: 600;
+    line-height: 1.2;
+    @include ellipsis;
+  }
+
+  &__row-category {
+    font-size: $fs-xs;
+    color: $color-text-muted;
+    line-height: 1.2;
+    @include ellipsis;
+  }
+
+  &__row-total {
+    font-size: $fs-sm;
+    font-weight: 600;
+  }
+
+  &__row-change {
+    font-size: $fs-sm;
+    font-weight: 600;
+
+    &--up {
+      color: $color-success;
+    }
+
+    &--down {
+      color: $color-danger;
+    }
+  }
+}

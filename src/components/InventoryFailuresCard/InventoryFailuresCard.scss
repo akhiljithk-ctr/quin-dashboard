@@ -1,0 +1,105 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.inventory-failures-card {
+  @include card;
+  min-height: 0;
+  overflow: hidden;
+
+  &__header {
+    flex-shrink: 0;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    @include card-header;
+    margin: 0 0 6px;
+    white-space: nowrap;
+  }
+
+  &__info {
+    font-size: $fs-sm;
+    color: $color-text-muted;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 4px;
+    background: $color-bg;
+    border-radius: $radius-sm;
+    padding: 3px;
+    flex-shrink: 0;
+  }
+
+  &__tab {
+    border: none;
+    background: transparent;
+    padding: 5px 10px;
+    font-size: $fs-xs;
+    font-weight: 600;
+    color: $color-text-secondary;
+    border-radius: $radius-sm;
+    white-space: nowrap;
+
+    &--active {
+      background: $color-surface;
+      color: $color-text-primary;
+      box-shadow: $shadow-card;
+    }
+  }
+
+  &__table-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) 50px minmax(0, 1fr);
+    font-size: 10px;
+    color: $color-text-muted;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-bottom: 6px;
+    white-space: nowrap;
+
+    span {
+      @include ellipsis;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) 50px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  &__row-sku {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  &__row-name {
+    font-size: $fs-xs;
+    font-weight: 500;
+    @include ellipsis;
+  }
+
+  &__row-rate {
+    font-size: $fs-xs;
+    font-weight: 600;
+    color: $color-danger;
+  }
+
+  &__row-reason {
+    font-size: $fs-xs;
+    color: $color-text-secondary;
+    @include ellipsis;
+  }
+}
