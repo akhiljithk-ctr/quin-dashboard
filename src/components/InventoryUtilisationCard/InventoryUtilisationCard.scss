@@ -12,12 +12,18 @@
   }
 
   &__title {
-    @include card-header;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 0;
+    font-size: calc(16px * var(--inverse-scale, 1));
+    font-weight: 400;
+    color: #0f172a;
+    line-height: 1.2;
   }
 
   &__info {
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-muted;
   }
 
@@ -29,8 +35,8 @@
   }
 
   &__stat-value {
-    font-size: $fs-xxl;
-    font-weight: 700;
+    font-size: calc(#{$fs-xxl} * var(--inverse-scale, 1));
+    font-weight: 400;
     line-height: 1;
   }
 
@@ -39,7 +45,7 @@
   }
 
   &__delta {
-    font-size: $fs-xs;
+    font-size: calc(#{$fs-xs} * var(--inverse-scale, 1));
     font-weight: 600;
 
     &--down {
@@ -53,12 +59,13 @@
 
   &__stat-label {
     margin-top: 2px;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-secondary;
   }
 
-  &__chart-placeholder {
-    @include chart-placeholder;
+  &__chart {
+    flex: 1;
+    min-height: 0;
   }
 
   &__legend {
@@ -67,7 +74,8 @@
     justify-content: center;
     flex-shrink: 0;
     margin-top: 10px;
-    font-size: 10px;
+    font-size: calc(10px * var(--inverse-scale, 1));
+    font-family: $font-family-mono;
     color: $color-text-secondary;
     white-space: nowrap;
   }
@@ -84,15 +92,15 @@
     border-radius: 50%;
 
     &--tag {
-      background: $color-teal;
+      background: #7ee8fa;
     }
 
     &--pod {
-      background: $color-navy-light;
+      background: #00bcd4;
     }
 
     &--unassigned {
-      background: #d5dae1;
+      background: #ff2a8d;
     }
   }
 }

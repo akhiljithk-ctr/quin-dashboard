@@ -1,4 +1,6 @@
 import InfoIcon from '../InfoIcon/InfoIcon'
+import InventoryUtilisationChart from './InventoryUtilisationChart'
+import './InventoryUtilisationChart.scss'
 import './InventoryUtilisationCard.scss'
 
 function InventoryUtilisationCard() {
@@ -28,7 +30,9 @@ function InventoryUtilisationCard() {
         </div>
       </div>
 
-      <div className="inventory-utilisation-card__chart-placeholder">Chart: Monthly utilisation</div>
+      <div className="inventory-utilisation-card__chart">
+        <InventoryUtilisationChart />
+      </div>
 
       <div className="inventory-utilisation-card__legend">
         <span className="inventory-utilisation-card__legend-item">

@@ -9,7 +9,6 @@ import InventoryStatusCard from './components/InventoryStatusCard/InventoryStatu
 import UserProfileCompletionCard from './components/UserProfileCompletionCard/UserProfileCompletionCard'
 import InventoryFailuresCard from './components/InventoryFailuresCard/InventoryFailuresCard'
 import InventoryLifecycleCard from './components/InventoryLifecycleCard/InventoryLifecycleCard'
-import LifecycleTabsCard from './components/LifecycleTabsCard/LifecycleTabsCard'
 import './App.scss'
 
 function App() {
