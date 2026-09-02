@@ -14,30 +14,28 @@ import './App.scss'
 
 function App() {
   return (
-    <div className="app-scale">
-      <div className="app">
-        <Sidebar />
-        <div className="app__main">
-          <TopBar />
-          <div className="app__content">
-            <div className="app__row app__row--1">
-              <WorkspaceCard />
-              <WorkspaceOverviewCard />
-              <InventoryOverviewCard />
-            </div>
+    <div className="app">
+      <Sidebar />
+      <div className="app__main">
+        <TopBar />
+        <div className="app__content">
+          <div className="app__row app__row--1">
+            <WorkspaceCard />
+            <WorkspaceOverviewCard />
+            <InventoryOverviewCard />
+          </div>
 
-            <div className="app__row app__row--2">
-              <InventoryUtilisationCard />
-              <InventoryComplianceCard />
-              <InventoryStatusCard />
-              <UserProfileCompletionCard />
-            </div>
+          <div className="app__row app__row--2">
+            <InventoryUtilisationCard />
+            <InventoryComplianceCard />
+            <InventoryStatusCard />
+            <UserProfileCompletionCard />
+          </div>
 
-            <div className="app__row app__row--3">
-              <InventoryFailuresCard />
-              <InventoryLifecycleCard />
-              <LifecycleTabsCard />
-            </div>
+          <div className="app__row app__row--3">
+            <InventoryFailuresCard />
+            <InventoryLifecycleCard />
+            <LifecycleTabsCard />
           </div>
         </div>
       </div>
