@@ -4,8 +4,7 @@
 .workspace-overview-card {
   @include card;
   min-height: 0;
-  width: 439px;
-  max-width: 439px;
+  min-width: 0;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;

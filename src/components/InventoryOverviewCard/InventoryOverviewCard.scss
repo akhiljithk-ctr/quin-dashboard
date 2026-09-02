@@ -4,7 +4,7 @@
 .inventory-overview-card {
   @include card;
   min-height: 0;
-  width: 712px;
+  min-width: 0;
   overflow: hidden;
 
   &__header {
