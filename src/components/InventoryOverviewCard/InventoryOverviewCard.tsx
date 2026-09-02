@@ -1,4 +1,6 @@
 import InfoIcon from '../InfoIcon/InfoIcon'
+import InventoryTrendChart from './InventoryTrendChart'
+import './InventoryTrendChart.scss'
 import './InventoryOverviewCard.scss'
 
 function InventoryOverviewCard() {
@@ -28,7 +30,9 @@ function InventoryOverviewCard() {
         </div>
       </div>
 
-      <div className="inventory-overview-card__chart-placeholder">Chart: In Service / Out of Service / Decommissioned trend</div>
+      <div className="inventory-overview-card__chart">
+        <InventoryTrendChart />
+      </div>
 
       <div className="inventory-overview-card__legend">
         <span className="inventory-overview-card__legend-item">

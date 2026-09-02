@@ -1,5 +1,7 @@
 import InfoIcon from '../InfoIcon/InfoIcon'
-import SkuIcon from '../SkuIcon/SkuIcon'
+import traverseFullBrimImg from '../../assets/images/1.png'
+import armetProImg from '../../assets/images/2.png'
+import vFitHarnessImg from '../../assets/images/3.png'
 import './WorkspaceOverviewCard.scss'
 
 interface SkuRow {
@@ -7,13 +9,23 @@ interface SkuRow {
   category: string
   total: number
   change: number
+  image: string
 }
 
 const TOP_SKUS: SkuRow[] = [
-  { name: 'Traverse Full Brim', category: 'Head Protection', total: 563, change: 5 },
-  { name: 'Armet Pro', category: 'Head Protection', total: 534, change: -2 },
-  { name: 'V-Fit Harness', category: 'Harness', total: 489, change: 5 },
+  { name: 'Traverse Full Brim', category: 'Head Protection', total: 563, change: 5, image: traverseFullBrimImg },
+  { name: 'Armet Pro', category: 'Head Protection', total: 534, change: -2, image: armetProImg },
+  { name: 'V-Fit Harness', category: 'Harness', total: 489, change: 5, image: vFitHarnessImg },
+  { name: 'Traverse Full Brim', category: 'Head Protection', total: 412, change: 5, image: traverseFullBrimImg },
 ]
+
+function SortIcon() {
+  return (
+    <svg className="workspace-overview-card__sort-icon" viewBox="0 0 7 10" fill="currentColor">
+      <path d="M3.5 0.5L6.5 4H0.5L3.5 0.5Z M3.5 9.5L0.5 6H6.5L3.5 9.5Z" />
+    </svg>
+  )
+}
 
 function WorkspaceOverviewCard() {
   return (
@@ -27,32 +39,41 @@ function WorkspaceOverviewCard() {
 
       <div className="workspace-overview-card__stats">
         <div className="workspace-overview-card__stat">
-          <div className="workspace-overview-card__stat-value">123</div>
-          <div className="workspace-overview-card__stat-meta">
+          <span className="workspace-overview-card__stat-value">123</span>
+          <div className="workspace-overview-card__stat-top">
             <span className="workspace-overview-card__delta workspace-overview-card__delta--down">-5% L30D</span>
+            <span className="workspace-overview-card__stat-label">Total SKUs</span>
           </div>
-          <div className="workspace-overview-card__stat-label">Total SKUs</div>
         </div>
+
         <div className="workspace-overview-card__stat">
-          <div className="workspace-overview-card__stat-value">12</div>
-          <div className="workspace-overview-card__stat-meta">
+          <span className="workspace-overview-card__stat-value">12</span>
+          <div className="workspace-overview-card__stat-top">
             <span className="workspace-overview-card__delta workspace-overview-card__delta--down">-5% L30D</span>
+            <span className="workspace-overview-card__stat-label">Total Brands</span>
           </div>
-          <div className="workspace-overview-card__stat-label">Total Brands</div>
         </div>
       </div>
 
       <div className="workspace-overview-card__table">
         <div className="workspace-overview-card__table-head">
-          <span>Top SKUs</span>
-          <span>Total</span>
-          <span>Change %</span>
+          <span>
+            Top SKUs <SortIcon />
+          </span>
+          <span>
+            Total <SortIcon />
+          </span>
+          <span>
+            Change % <SortIcon />
+          </span>
         </div>
         <div className="workspace-overview-card__table-body">
-          {TOP_SKUS.map((sku) => (
-            <div className="workspace-overview-card__row" key={sku.name}>
+          {TOP_SKUS.map((sku, idx) => (
+            <div className="workspace-overview-card__row" key={`${sku.name}-${idx}`}>
               <div className="workspace-overview-card__row-sku">
-                <SkuIcon size={22} />
+                <span className="workspace-overview-card__row-icon">
+                  <img src={sku.image} alt={sku.name} />
+                </span>
                 <div className="workspace-overview-card__row-text">
                   <div className="workspace-overview-card__row-name">{sku.name}</div>
                   <div className="workspace-overview-card__row-category">{sku.category}</div>
@@ -72,3 +93,4 @@ function WorkspaceOverviewCard() {
 }
 
 export default WorkspaceOverviewCard
+

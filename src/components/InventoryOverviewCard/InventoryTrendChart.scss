@@ -1,0 +1,102 @@
+@use '../../styles/variables' as *;
+
+.inventory-trend-chart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 8px;
+
+  &__y-axis {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  &__axis-label {
+    font-size: 11px;
+    color: $color-text-muted;
+    font-family: $font-family;
+    line-height: 1;
+    transform: translateY(-50%);
+
+    &:last-child {
+      transform: translateY(50%);
+    }
+  }
+
+  &__plot {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__svg {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    display: block;
+    overflow: visible;
+  }
+
+  &__gridline {
+    stroke: $color-border;
+    stroke-width: 1;
+  }
+
+  &__month-tick {
+    stroke: $color-border;
+    stroke-width: 1;
+    opacity: 0.6;
+  }
+
+  &__area {
+    &--service {
+      fill: $color-teal-light;
+      fill-opacity: 0.9;
+    }
+
+    &--out {
+      fill: $color-pink;
+      fill-opacity: 0.9;
+    }
+
+    &--decommissioned {
+      fill: $color-navy-light;
+      fill-opacity: 0.95;
+    }
+  }
+
+  &__line {
+    fill: none;
+    stroke-width: 1.5;
+
+    &--service {
+      stroke: $color-teal;
+    }
+
+    &--out {
+      stroke: $color-pink;
+    }
+
+    &--decommissioned {
+      stroke: $color-navy-light;
+    }
+  }
+
+  &__x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    flex-shrink: 0;
+  }
+
+  &__month-label {
+    font-size: 11px;
+    color: $color-text-muted;
+    font-family: $font-family;
+    line-height: 1;
+  }
+}
