@@ -22,115 +22,32 @@
     padding-right: 20px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-  }
-
-  &__grid {
-    flex: 1;
-    min-height: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(24, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-      'workspace workspace workspace workspace workspace overview overview overview overview overview overview overview inventory inventory inventory inventory inventory inventory inventory inventory inventory inventory inventory inventory'
-      'utilisation utilisation utilisation utilisation utilisation utilisation utilisation utilisation compliance compliance compliance compliance status status status status status status status profile profile profile profile profile'
-      'failures failures failures failures failures failures failures failures compliance compliance compliance compliance lifecycle lifecycle lifecycle lifecycle lifecycle lifecycle lifecycle tabs tabs tabs tabs tabs';
     gap: 16px;
     overflow: hidden;
   }
 
-  &__cell {
-    min-width: 0;
-    min-height: 0;
+  &__row {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 9px;
+    max-height: 218.4px;
 
-    > * {
-      flex: 1;
-      min-width: 0;
-      min-height: 0;
-    }
-  }
+    // > * {
+    //   min-width: 0;
+    //   min-height: 0;
+    // }
 
-  &__cell--workspace {
-    grid-area: workspace;
-  }
+    // &--1 {
+    //   flex: 273 1 0;
+    // }
 
-  &__cell--workspace-overview {
-    grid-area: overview;
-  }
+    // &--2 {
+    //   flex: 222 1 0;
+    // }
 
-  &__cell--inventory-overview {
-    grid-area: inventory;
-  }
-
-  &__cell--utilisation {
-    grid-area: utilisation;
-  }
-
-  &__cell--compliance {
-    grid-area: compliance;
-  }
-
-  &__cell--status {
-    grid-area: status;
-  }
-
-  &__cell--profile {
-    grid-area: profile;
-  }
-
-  &__cell--failures {
-    grid-area: failures;
-  }
-
-  &__cell--lifecycle {
-    grid-area: lifecycle;
-  }
-
-  &__cell--lifecycle-tabs {
-    grid-area: tabs;
-  }
-}
-
-@media (max-width: 1180px) {
-  .app__content {
-    overflow-y: auto;
-  }
-
-  .app__grid {
-    height: auto;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: none;
-    grid-auto-rows: auto;
-    grid-template-areas:
-      'workspace overview'
-      'inventory inventory'
-      'utilisation compliance'
-      'status profile'
-      'failures failures'
-      'lifecycle lifecycle'
-      'tabs tabs';
-  }
-
-  .app__cell {
-    min-height: 220px;
-  }
-}
-
-@media (max-width: 640px) {
-  .app__grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      'workspace'
-      'overview'
-      'inventory'
-      'utilisation'
-      'compliance'
-      'status'
-      'profile'
-      'failures'
-      'lifecycle'
-      'tabs';
+    // &--3 {
+    //   flex: 222 1 0;
+    // }
   }
 }

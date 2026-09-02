@@ -19,39 +19,23 @@ function App() {
       <div className="app__main">
         <TopBar />
         <div className="app__content">
-          <div className="app__grid">
-            <div className="app__cell app__cell--workspace">
-              <WorkspaceCard />
-            </div>
-            <div className="app__cell app__cell--workspace-overview">
-              <WorkspaceOverviewCard />
-            </div>
-            <div className="app__cell app__cell--inventory-overview">
-              <InventoryOverviewCard />
-            </div>
+          <div className="app__row app__row--1">
+            <WorkspaceCard />
+            <WorkspaceOverviewCard />
+            <InventoryOverviewCard />
+          </div>
 
-            <div className="app__cell app__cell--utilisation">
-              <InventoryUtilisationCard />
-            </div>
-            <div className="app__cell app__cell--compliance">
-              <InventoryComplianceCard />
-            </div>
-            <div className="app__cell app__cell--status">
-              <InventoryStatusCard />
-            </div>
-            <div className="app__cell app__cell--profile">
-              <UserProfileCompletionCard />
-            </div>
+          <div className="app__row app__row--2">
+            <InventoryUtilisationCard />
+            <InventoryComplianceCard />
+            <InventoryStatusCard />
+            <UserProfileCompletionCard />
+          </div>
 
-            <div className="app__cell app__cell--failures">
-              <InventoryFailuresCard />
-            </div>
-            <div className="app__cell app__cell--lifecycle">
-              <InventoryLifecycleCard />
-            </div>
-            <div className="app__cell app__cell--lifecycle-tabs">
-              <LifecycleTabsCard />
-            </div>
+          <div className="app__row app__row--3">
+            <InventoryFailuresCard />
+            <InventoryLifecycleCard />
+            <LifecycleTabsCard />
           </div>
         </div>
       </div>
