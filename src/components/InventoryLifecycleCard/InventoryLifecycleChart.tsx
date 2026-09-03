@@ -85,7 +85,7 @@ function InventoryLifecycleChart() {
       <div className="inventory-lifecycle-chart__plot">
         <svg
           className="inventory-lifecycle-chart__svg"
-          viewBox={`0 0 ${WIDTH} ${HEIGHT + 24}`}
+          viewBox={`0 0 ${WIDTH} ${HEIGHT + 8}`}
           preserveAspectRatio="none"
           role="img"
           aria-label="Decommissioned inventory trend with forecast"
