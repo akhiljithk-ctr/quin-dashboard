@@ -3,12 +3,13 @@ interface Segment {
   percent: number
   color: string
   labelColor: string
+  innerRadius?: number
 }
 
 const SEGMENTS: Segment[] = [
-  { key: 'responder', percent: 9, color: '#ec4899', labelColor: '#ffffff' },
-  { key: 'not-added', percent: 10, color: '#00c8dc', labelColor: '#ffffff' },
-  { key: 'only', percent: 81, color: '#8fdfe0', labelColor: '#14202b' },
+  { key: 'responder', percent: 9, color: '#ff2a8d', labelColor: '#ffffff', innerRadius: 20 },
+  { key: 'not-added', percent: 10, color: '#00bcd4', labelColor: '#ffffff' },
+  { key: 'only', percent: 81, color: '#8fe5f5', labelColor: '#14202b' },
 ]
 
 const SIZE = 200
@@ -37,34 +38,38 @@ function insetDeg(radius: number) {
 
 /**
  * Annular wedge with all four corners rounded by CORNER_RADIUS.
- * Each corner is a 90° fillet (tangent-to-arc meets radial line at a right angle),
- * connected to its neighbouring arc/fillet by a short radial stub.
+ * Supports custom outerRadius and innerRadius per slice.
  */
-function buildRoundedDonutSlice(startDeg: number, endDeg: number) {
+function buildRoundedDonutSlice(
+  startDeg: number,
+  endDeg: number,
+  outerRadius: number = OUTER_RADIUS,
+  innerRadius: number = INNER_RADIUS
+) {
   const span = endDeg - startDeg
-  const oInset = Math.min(insetDeg(OUTER_RADIUS), span / 2.2)
-  const iInset = Math.min(insetDeg(INNER_RADIUS), span / 2.2)
+  const oInset = Math.min(insetDeg(outerRadius), span / 2.2)
+  const iInset = Math.min(insetDeg(innerRadius), span / 2.2)
 
-  const oStart = pointOnCircle(OUTER_RADIUS, startDeg + oInset)
-  const oEnd = pointOnCircle(OUTER_RADIUS, endDeg - oInset)
-  const iEnd = pointOnCircle(INNER_RADIUS, endDeg - iInset)
-  const iStart = pointOnCircle(INNER_RADIUS, startDeg + iInset)
+  const oStart = pointOnCircle(outerRadius, startDeg + oInset)
+  const oEnd = pointOnCircle(outerRadius, endDeg - oInset)
+  const iEnd = pointOnCircle(innerRadius, endDeg - iInset)
+  const iStart = pointOnCircle(innerRadius, startDeg + iInset)
 
-  const endOuterStub = pointOnCircle(OUTER_RADIUS - CORNER_RADIUS, endDeg)
-  const endInnerStub = pointOnCircle(INNER_RADIUS + CORNER_RADIUS, endDeg)
-  const startInnerStub = pointOnCircle(INNER_RADIUS + CORNER_RADIUS, startDeg)
-  const startOuterStub = pointOnCircle(OUTER_RADIUS - CORNER_RADIUS, startDeg)
+  const endOuterStub = pointOnCircle(outerRadius - CORNER_RADIUS, endDeg)
+  const endInnerStub = pointOnCircle(innerRadius + CORNER_RADIUS, endDeg)
+  const startInnerStub = pointOnCircle(innerRadius + CORNER_RADIUS, startDeg)
+  const startOuterStub = pointOnCircle(outerRadius - CORNER_RADIUS, startDeg)
 
   const largeArcOuter = endDeg - oInset - (startDeg + oInset) > 180 ? 1 : 0
   const largeArcInner = endDeg - iInset - (startDeg + iInset) > 180 ? 1 : 0
 
   return [
     `M ${oStart.x},${oStart.y}`,
-    `A ${OUTER_RADIUS},${OUTER_RADIUS} 0 ${largeArcOuter} 1 ${oEnd.x},${oEnd.y}`,
+    `A ${outerRadius},${outerRadius} 0 ${largeArcOuter} 1 ${oEnd.x},${oEnd.y}`,
     `A ${CORNER_RADIUS},${CORNER_RADIUS} 0 0 1 ${endOuterStub.x},${endOuterStub.y}`,
     `L ${endInnerStub.x},${endInnerStub.y}`,
     `A ${CORNER_RADIUS},${CORNER_RADIUS} 0 0 1 ${iEnd.x},${iEnd.y}`,
-    `A ${INNER_RADIUS},${INNER_RADIUS} 0 ${largeArcInner} 0 ${iStart.x},${iStart.y}`,
+    `A ${innerRadius},${innerRadius} 0 ${largeArcInner} 0 ${iStart.x},${iStart.y}`,
     `A ${CORNER_RADIUS},${CORNER_RADIUS} 0 0 1 ${startInnerStub.x},${startInnerStub.y}`,
     `L ${startOuterStub.x},${startOuterStub.y}`,
     `A ${CORNER_RADIUS},${CORNER_RADIUS} 0 0 1 ${oStart.x},${oStart.y}`,
@@ -73,21 +78,29 @@ function buildRoundedDonutSlice(startDeg: number, endDeg: number) {
 }
 
 function UserProfileDonutChart() {
-  let cumulativeDeg = 0
-  const midRadius = (OUTER_RADIUS + INNER_RADIUS) / 2
+  const segmentStarts = SEGMENTS.reduce<number[]>((starts, _seg, i) => {
+    const prevStart = i === 0 ? 0 : starts[i - 1]
+    const prevSpan = i === 0 ? 0 : (SEGMENTS[i - 1].percent / 100) * 360
+    starts.push(prevStart + prevSpan)
+    return starts
+  }, [])
 
-  const slices = SEGMENTS.map((seg) => {
+  const slices = SEGMENTS.map((seg, i) => {
     const spanDeg = (seg.percent / 100) * 360
+    const cumulativeDeg = segmentStarts[i]
     const startDeg = cumulativeDeg + PAD_DEG / 2
     const endDeg = cumulativeDeg + spanDeg - PAD_DEG / 2
-    cumulativeDeg += spanDeg
+
+    const innerRadius = seg.innerRadius ?? INNER_RADIUS
+    const outerRadius = OUTER_RADIUS
+    const midRadius = (outerRadius + innerRadius) / 2
 
     const midDeg = (startDeg + endDeg) / 2
     const labelPoint = pointOnCircle(midRadius, midDeg)
 
     return {
       ...seg,
-      path: buildRoundedDonutSlice(startDeg, endDeg),
+      path: buildRoundedDonutSlice(startDeg, endDeg, outerRadius, innerRadius),
       labelPoint,
     }
   })
@@ -115,3 +128,4 @@ function UserProfileDonutChart() {
 }
 
 export default UserProfileDonutChart
+
