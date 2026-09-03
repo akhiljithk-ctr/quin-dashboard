@@ -1,24 +1,27 @@
 import { useState } from 'react'
-import SkuIcon from '../SkuIcon/SkuIcon'
+import traverseFullBrimImg from '../../assets/images/1.png'
+import armetProImg from '../../assets/images/2.png'
+import harnessImg from '../../assets/images/3.png'
 import './LifecycleTabsCard.scss'
 
 interface Row {
   name: string
   value: number
   percent: number
+  image: string
 }
 
 const DECOMMISSIONED: Row[] = [
-  { name: 'Traverse Full Brim', value: 120, percent: 90 },
-  { name: 'Armet Pro', value: 109, percent: 82 },
-  { name: 'Miller H700', value: 102, percent: 76 },
-  { name: 'ICE Evolution Safety', value: 84, percent: 62 },
+  { name: 'Traverse Full Brim', value: 120, percent: 90, image: traverseFullBrimImg },
+  { name: 'Armet Pro', value: 109, percent: 82, image: armetProImg },
+  { name: 'Miller H700', value: 102, percent: 76, image: harnessImg },
+  { name: 'ICE Evolution Safety', value: 84, percent: 62, image: traverseFullBrimImg },
 ]
 
 const EXPIRING: Row[] = [
-  { name: 'V-Fit Harness', value: 64, percent: 55 },
-  { name: 'PIP RZRBack', value: 48, percent: 40 },
-  { name: 'Traverse Full Brim', value: 33, percent: 28 },
+  { name: 'V-Fit Harness', value: 64, percent: 55, image: harnessImg },
+  { name: 'PIP RZRBack', value: 48, percent: 40, image: traverseFullBrimImg },
+  { name: 'Traverse Full Brim', value: 33, percent: 28, image: traverseFullBrimImg },
 ]
 
 function LifecycleTabsCard() {
@@ -45,14 +48,20 @@ function LifecycleTabsCard() {
       <div className="lifecycle-tabs-card__list">
         {rows.map((row) => (
           <div className="lifecycle-tabs-card__row" key={row.name}>
-            <SkuIcon size={20} />
-            <div className="lifecycle-tabs-card__row-main">
-              <div className="lifecycle-tabs-card__row-name">{row.name}</div>
+            <div className="lifecycle-tabs-card__row-content">
+              <div className="lifecycle-tabs-card__row-top">
+                <div className="lifecycle-tabs-card__row-image-and-name">
+                  <span className="lifecycle-tabs-card__row-icon">
+                    <img src={row.image} alt={row.name} />
+                  </span>
+                  <span className="lifecycle-tabs-card__row-name">{row.name}</span>
+                </div>
+                <span className="lifecycle-tabs-card__row-value">{row.value}</span>
+              </div>
               <div className="lifecycle-tabs-card__bar">
                 <div className="lifecycle-tabs-card__bar-fill" style={{ width: `${row.percent}%` }} />
               </div>
             </div>
-            <div className="lifecycle-tabs-card__row-value">{row.value}</div>
           </div>
         ))}
       </div>

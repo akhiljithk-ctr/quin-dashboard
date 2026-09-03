@@ -33,14 +33,14 @@ function InventoryStatusCard() {
             <div className="inventory-status-card__row-count">{row.count}</div>
             <div className="inventory-status-card__row-main">
               <div className="inventory-status-card__row-name">{row.name}</div>
-              <div className="inventory-status-card__bar">
-                <span className="inventory-status-card__bar-seg inventory-status-card__bar-seg--service" style={{ width: `${row.inService}%` }} />
-                <span className="inventory-status-card__bar-seg inventory-status-card__bar-seg--out" style={{ width: `${row.outOfService}%` }} />
-                <span
-                  className="inventory-status-card__bar-seg inventory-status-card__bar-seg--decommissioned"
-                  style={{ width: `${row.decommissioned}%` }}
-                />
-              </div>
+            </div>
+            <div className="inventory-status-card__bar">
+              <span className="inventory-status-card__bar-seg inventory-status-card__bar-seg--service" style={{ width: `${row.inService}%` }} />
+              <span className="inventory-status-card__bar-seg inventory-status-card__bar-seg--out" style={{ width: `${row.outOfService}%` }} />
+              <span
+                className="inventory-status-card__bar-seg inventory-status-card__bar-seg--decommissioned"
+                style={{ width: `${row.decommissioned}%` }}
+              />
             </div>
           </div>
         ))}

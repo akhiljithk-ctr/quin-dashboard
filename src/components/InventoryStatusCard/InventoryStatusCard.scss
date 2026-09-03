@@ -31,41 +31,40 @@
   }
 
   &__row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) minmax(0, 2.4fr);
     align-items: center;
-    gap: 10px;
+    column-gap: 10px;
   }
 
   &__row-count {
-    width: 34px;
-    flex-shrink: 0;
     font-size: $fs-sm;
     font-weight: 700;
     text-align: right;
   }
 
   &__row-main {
-    flex: 1;
     min-width: 0;
   }
 
   &__row-name {
     font-size: 10px;
     color: $color-text-secondary;
-    margin-bottom: 3px;
     @include ellipsis;
   }
 
   &__bar {
     display: flex;
     height: 6px;
-    border-radius: $radius-pill;
-    overflow: hidden;
     background: $color-bg;
+    border-radius: $radius-pill;
   }
 
   &__bar-seg {
     height: 100%;
+    border-radius: $radius-pill;
+    min-width: 8px;
+    box-sizing: border-box;
 
     &--service {
       background: $color-teal;

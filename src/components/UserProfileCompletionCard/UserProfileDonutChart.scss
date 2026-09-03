@@ -1,0 +1,22 @@
+@use '../../styles/variables' as *;
+
+.user-profile-donut {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  &__slice {
+    stroke: $color-surface;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+  }
+
+  &__label {
+    font-family: $font-family-mono;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    pointer-events: none;
+    user-select: none;
+  }
+}

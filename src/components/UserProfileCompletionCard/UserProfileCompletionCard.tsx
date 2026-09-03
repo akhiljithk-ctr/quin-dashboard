@@ -1,10 +1,12 @@
 import InfoIcon from '../InfoIcon/InfoIcon'
+import UserProfileDonutChart from './UserProfileDonutChart'
+import './UserProfileDonutChart.scss'
 import './UserProfileCompletionCard.scss'
 
 const LEGEND = [
-  { label: 'Med ID+ Responder', value: '9%', variant: 'pink' },
-  { label: 'Med ID Only', value: '81%', variant: 'teal' },
-  { label: 'Med ID Not Added', value: '10%', variant: 'navy' },
+  { label: 'Med ID+ Responder', variant: 'pink' },
+  { label: 'Med ID Only', variant: 'teal-light' },
+  { label: 'Med ID Not Added', variant: 'teal' },
 ]
 
 function UserProfileCompletionCard() {
@@ -18,8 +20,8 @@ function UserProfileCompletionCard() {
       </div>
 
       <div className="user-profile-card__body">
-        <div className="user-profile-card__chart-placeholder">
-          <span className="user-profile-card__chart-value">81%</span>
+        <div className="user-profile-card__chart">
+          <UserProfileDonutChart />
         </div>
 
         <div className="user-profile-card__legend">

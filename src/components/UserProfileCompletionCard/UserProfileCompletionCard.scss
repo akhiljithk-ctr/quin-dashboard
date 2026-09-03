@@ -25,77 +25,57 @@
     flex: 1;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
     min-height: 0;
   }
 
-  &__chart-placeholder {
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    border-radius: 50%;
-    background: conic-gradient(
-      $color-pink 0% 9%,
-      $color-navy-light 9% 19%,
-      $color-teal-light 19% 100%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 16px;
-      border-radius: 50%;
-      background: $color-surface;
-    }
-  }
-
-  &__chart-value {
-    position: relative;
-    z-index: 1;
-    font-size: $fs-lg;
-    font-weight: 700;
-    color: $color-text-primary;
+  &__chart {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
   }
 
   &__legend {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: space-between;
+    align-self: stretch;
+    padding: 4px 0;
     min-width: 0;
   }
 
   &__legend-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
   }
 
   &__legend-label {
-    font-size: $fs-xs;
+    font-family: $font-family-mono;
+    font-size: $fs-sm;
+    font-weight: 400;
     color: $color-text-secondary;
-    @include ellipsis;
+    line-height: 1.3;
+    max-width: 90px;
   }
 
   &__dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
+    margin-top: 2px;
 
     &--pink {
-      background: $color-pink;
+      background: #ec4899;
+    }
+
+    &--teal-light {
+      background: #8fdfe0;
     }
 
     &--teal {
-      background: $color-teal-light;
-    }
-
-    &--navy {
-      background: $color-navy-light;
+      background: #00c8dc;
     }
   }
 }
