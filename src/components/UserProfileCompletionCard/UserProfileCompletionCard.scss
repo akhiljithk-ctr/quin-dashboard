@@ -5,6 +5,7 @@
   @include card;
   min-height: 0;
   overflow: hidden;
+  max-width: calc(338px * var(--inverse-scale, 1));
 
   &__header {
     flex-shrink: 0;

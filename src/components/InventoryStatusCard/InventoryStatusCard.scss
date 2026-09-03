@@ -5,7 +5,8 @@
   @include card;
   min-height: 0;
   overflow: hidden;
-  width: calc(425px * var(--inverse-scale, 1));
+  width: calc(400px * var(--inverse-scale, 1));
+  max-width: calc(400px * var(--inverse-scale, 1));
   // min-height: calc(212px * var(--inverse-scale, 1));
   padding: 9px;
 
@@ -92,10 +93,11 @@
 
   &__legend {
     display: flex;
-    gap: 8px;
+    justify-content: space-between;
     flex-shrink: 0;
     margin-top: 6px;
-    font-size: calc(10px * var(--inverse-scale, 1));
+    font-family: $font-family-mono;
+    font-size: calc(12px * var(--inverse-scale, 1));
     color: $color-text-secondary;
     flex-wrap: wrap;
     row-gap: 2px;

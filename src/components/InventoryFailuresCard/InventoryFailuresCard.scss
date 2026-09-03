@@ -6,6 +6,9 @@
   flex: 1;
   min-height: 0;
   max-height: 254px;
+  width: calc(427.8px * var(--inverse-scale, 1));
+  min-width: calc(427.8px * var(--inverse-scale, 1));
+  max-width: calc(427.8px * var(--inverse-scale, 1));
   overflow: hidden;
 
   &__header {
