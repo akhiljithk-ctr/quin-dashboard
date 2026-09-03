@@ -42,11 +42,6 @@
     overflow: visible;
   }
 
-  &__gridline {
-    stroke: $color-border;
-    stroke-width: 1;
-  }
-
   &__bar {
     stroke-width: 1;
     stroke-opacity: 0.6;

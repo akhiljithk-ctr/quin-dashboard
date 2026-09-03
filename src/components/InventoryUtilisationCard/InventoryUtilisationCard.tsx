@@ -18,15 +18,15 @@ function InventoryUtilisationCard() {
           <div className="inventory-utilisation-card__stat-value">5231</div>
           <div className="inventory-utilisation-card__stat-meta">
             <span className="inventory-utilisation-card__delta inventory-utilisation-card__delta--down">-1% L30D</span>
+            <div className="inventory-utilisation-card__stat-label">Total Assigned</div>
           </div>
-          <div className="inventory-utilisation-card__stat-label">Total Assigned</div>
         </div>
         <div className="inventory-utilisation-card__stat">
           <div className="inventory-utilisation-card__stat-value">62%</div>
           <div className="inventory-utilisation-card__stat-meta">
             <span className="inventory-utilisation-card__delta inventory-utilisation-card__delta--up">+6% L30D</span>
+           <div className="inventory-utilisation-card__stat-label">Utilization</div>
           </div>
-          <div className="inventory-utilisation-card__stat-label">Utilization</div>
         </div>
       </div>
 

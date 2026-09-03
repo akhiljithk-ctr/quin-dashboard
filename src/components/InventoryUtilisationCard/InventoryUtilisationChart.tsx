@@ -56,17 +56,6 @@ function InventoryUtilisationChart() {
           role="img"
           aria-label="Inventory utilisation by month"
         >
-          {GRID_VALUES.map((v) => (
-            <line
-              key={v}
-              className="inventory-utilisation-chart__gridline"
-              x1={0}
-              x2={WIDTH}
-              y1={yAt(v)}
-              y2={yAt(v)}
-            />
-          ))}
-
           {DATA.map((d, i) => {
             const centerX = (i + 0.5) * groupWidth
             const startX = centerX - totalGroupBarsWidth / 2
