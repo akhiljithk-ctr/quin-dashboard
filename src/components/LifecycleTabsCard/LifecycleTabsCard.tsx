@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import traverseFullBrimImg from '../../assets/images/1.png'
-import armetProImg from '../../assets/images/2.png'
-import harnessImg from '../../assets/images/3.png'
+import traverseFullBrimImg from '../../assets/images/compliance/1.png'
+import armetProImg from '../../assets/images/compliance/2.png'
+import harnessImg from '../../assets/images/compliance/3.png'
 import './LifecycleTabsCard.scss'
 
 interface Row {

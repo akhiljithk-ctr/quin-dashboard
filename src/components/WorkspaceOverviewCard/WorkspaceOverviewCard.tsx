@@ -49,7 +49,7 @@ function WorkspaceOverviewCard() {
         <div className="workspace-overview-card__stat">
           <span className="workspace-overview-card__stat-value">12</span>
           <div className="workspace-overview-card__stat-top">
-            <span className="workspace-overview-card__delta workspace-overview-card__delta--down">-5% L30D</span>
+            <span className="workspace-overview-card__delta workspace-overview-card__delta--down" style={{color: '#00C8DC'}}>-5% L30D</span>
             <span className="workspace-overview-card__stat-label">Total Brands</span>
           </div>
         </div>

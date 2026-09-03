@@ -61,7 +61,7 @@
     font-weight: 600;
 
     &--down {
-      color: $color-danger;
+      color: $color-teal;
     }
 
     &--up {
@@ -70,9 +70,8 @@
   }
 
   &__stat-label {
-    margin-top: 2px;
     font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
-    color: black;
+    color: #101010;
   }
 
   &__chart {
@@ -105,17 +104,17 @@
 
     &--tag {
       background: #85f0ff;
-      border: 1px solid rgba(0, 188, 212, 0.85);
+      border: 1px solid rgba(0, 80, 91, 0.85);
     }
 
     &--pod {
       background: #00bcd4;
-      border: 1px solid rgba(0, 143, 163, 0.6);
+      border: 1px solid rgba(0, 83, 94, 0.786);
     }
 
     &--unassigned {
       background: #ff3b9a;
-      border: 1px solid rgba(192, 38, 114, 0.6);
+      border: 1px solid rgba(100, 0, 50, 0.788);
     }
   }
 }

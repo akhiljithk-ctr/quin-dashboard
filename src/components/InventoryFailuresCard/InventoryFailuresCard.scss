@@ -5,7 +5,7 @@
   @include card;
   flex: 1;
   min-height: 0;
-  max-height: 254px;
+  max-height: calc(254px * var(--inverse-scale, 1));
   width: calc(427.8px * var(--inverse-scale, 1));
   min-width: calc(427.8px * var(--inverse-scale, 1));
   max-width: calc(427.8px * var(--inverse-scale, 1));
@@ -91,7 +91,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -102,12 +102,12 @@
 
   &__row {
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) 66px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.3fr) 31px minmax(0, 0.5fr);
     align-items: center;
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
-    padding: 4px 10px 4px 0;
+    padding: 0px 10px 0px 0;
     flex-shrink: 0;
   }
 
@@ -146,7 +146,7 @@
 
   &__row-reason {
     font-size: $fs-xs;
-    color: $color-text-secondary;
+    color: #101010;
     @include ellipsis;
   }
 }

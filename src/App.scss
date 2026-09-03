@@ -97,7 +97,7 @@
   flex-direction: row;
   min-width: 0;
   min-height: 0;
-  gap: 6px;
+  gap: calc(6px * var(--inverse-scale, 1));
 }
 
 .pos_2_sec_2 {
