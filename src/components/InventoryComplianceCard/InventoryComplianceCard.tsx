@@ -64,9 +64,7 @@ function InventoryComplianceCard() {
       </div>
 
       <div className="inventory-compliance-card__list-head">
-        <span>
-          SKUs <SortIcon />
-        </span>
+        <span>SKUs</span>
         <span>
           Compliance <SortIcon />
         </span>
