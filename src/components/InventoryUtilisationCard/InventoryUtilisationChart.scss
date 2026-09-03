@@ -4,7 +4,6 @@
   width: 100%;
   height: 100%;
   display: flex;
-  gap: 8px;
 
   &__y-axis {
     flex-shrink: 0;
@@ -30,6 +29,8 @@
     flex: 1;
     min-width: 0;
     display: flex;
+    max-height: 100px;
+    min-height: 100px;
     flex-direction: column;
   }
 
@@ -47,16 +48,22 @@
   }
 
   &__bar {
+    stroke-width: 1;
+    stroke-opacity: 0.6;
+
     &--tag {
-      fill: #7ee8fa;
+      fill: #85f0ff;
+      stroke: #00bcd4;
     }
 
     &--pod {
       fill: #00bcd4;
+      stroke: #008fa3;
     }
 
     &--unassigned {
-      fill: #ff2a8d;
+      fill: #ff3b9a;
+      stroke: #c02672;
     }
   }
 

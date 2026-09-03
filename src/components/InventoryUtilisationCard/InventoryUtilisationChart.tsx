@@ -79,7 +79,7 @@ function InventoryUtilisationChart() {
               <g key={MONTHS[i]}>
                 {bars.map(([value, className], j) => {
                   if (value <= 0) return null
-                  const x = startX + j * (barWidth + barGap)
+                  const x = startX + j * barWidth
                   const y = yAt(value)
                   const height = HEIGHT - y
                   return (

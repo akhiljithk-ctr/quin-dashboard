@@ -4,9 +4,9 @@
 .workspace-overview-card {
   @include card;
   min-height: 0;
-  min-width: calc(439px * var(--inverse-scale, 1));
+  min-width: calc(534px * var(--inverse-scale, 1));
   width: 100%;
-  max-width: calc(439px * var(--inverse-scale, 1));
+  max-width: calc(534px * var(--inverse-scale, 1));
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 10px;

@@ -92,15 +92,18 @@
     border-radius: 50%;
 
     &--tag {
-      background: #7ee8fa;
+      background: #85f0ff;
+      border: 1px solid rgba(0, 188, 212, 0.6);
     }
 
     &--pod {
       background: #00bcd4;
+      border: 1px solid rgba(0, 143, 163, 0.6);
     }
 
     &--unassigned {
-      background: #ff2a8d;
+      background: #ff3b9a;
+      border: 1px solid rgba(192, 38, 114, 0.6);
     }
   }
 }
