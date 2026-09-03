@@ -70,10 +70,6 @@ function InventoryTrendChart() {
           role="img"
           aria-label="Inventory status trend by month"
         >
-          {GRID_VALUES.map((v) => (
-            <line key={v} className="inventory-trend-chart__gridline" x1={0} x2={WIDTH} y1={yAt(v)} y2={yAt(v)} />
-          ))}
-
           {MONTHS.map((m, i) => (
             <line key={m} className="inventory-trend-chart__month-tick" x1={xAt(i)} x2={xAt(i)} y1={0} y2={HEIGHT} />
           ))}
