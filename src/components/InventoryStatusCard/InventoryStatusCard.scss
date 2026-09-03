@@ -20,7 +20,7 @@
   }
 
   &__info {
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-muted;
   }
 
@@ -48,7 +48,7 @@
   }
 
   &__row-count {
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-secondary;
     font-weight: 300;
     text-align: right;
@@ -59,14 +59,14 @@
   }
 
   &__row-name {
-    font-size: 10px;
+    font-size: calc(12px * var(--inverse-scale, 1));
     font-weight: 400;
     @include ellipsis;
   }
 
   &__bar {
     display: flex;
-    height: 6px;
+    height: calc(6px * var(--inverse-scale, 1));
     background: $color-bg;
     border-radius: $radius-pill;
   }
@@ -95,7 +95,7 @@
     gap: 8px;
     flex-shrink: 0;
     margin-top: 6px;
-    font-size: 10px;
+    font-size: calc(10px * var(--inverse-scale, 1));
     color: $color-text-secondary;
     flex-wrap: wrap;
     row-gap: 2px;

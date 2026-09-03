@@ -5,6 +5,8 @@
   @include card;
   overflow: hidden;
   min-width: calc(427.8px * var(--inverse-scale, 1));
+  max-height: calc(222px * var(--inverse-scale, 1));
+  padding: 14px 14px 7px 14px;
 
   &__header {
     flex-shrink: 0;
@@ -43,7 +45,7 @@
   }
 
   &__stat-value {
-    font-size: calc(#{$fs-xxl} * var(--inverse-scale, 1));
+    font-size: calc(33px * var(--inverse-scale, 1));
     font-weight: 300;
     line-height: 1;
   }

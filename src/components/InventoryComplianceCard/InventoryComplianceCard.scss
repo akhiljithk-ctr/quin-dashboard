@@ -5,8 +5,9 @@
   @include card;
   min-height: 0;
   overflow: hidden;
-  max-width: 267.2px;
-  min-width: 267.2px;
+  max-width: calc(267.2px * var(--inverse-scale, 1));
+  min-width: calc(267.2px * var(--inverse-scale, 1));
+  max-height: calc(445.1875px * var(--inverse-scale, 1));
 
   &__header {
     flex-shrink: 0;
@@ -19,7 +20,7 @@
   }
 
   &__info {
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-muted;
   }
 
@@ -33,14 +34,14 @@
   }
 
   &__stat-value {
-    font-size: $fs-xxl;
+    font-size: calc(#{$fs-xxl} * var(--inverse-scale, 1));
     font-weight: 300;
     line-height: 1;
     display: inline;
   }
 
   &__delta {
-    font-size: $fs-xs;
+    font-size: calc(#{$fs-xs} * var(--inverse-scale, 1));
     font-weight: 600;
 
     &--down {
@@ -54,7 +55,7 @@
 
   &__stat-label {
     margin-top: 2px;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: black;
     font-weight: 300;
   }
@@ -94,7 +95,7 @@
     justify-content: space-between;
     align-items: center;
     font-family: $font-family-mono;
-    font-size: 10px;
+    font-size: calc(10px * var(--inverse-scale, 1));
     color: #101010c5;
     font-weight: 400;
     flex-shrink: 0;
@@ -171,7 +172,7 @@
 
   &__row-name {
     @include ellipsis;
-    font-size: 14px;
+    font-size: calc(14px * var(--inverse-scale, 1));
     color: $color-text-primary;
     font-weight: 400;
   }
@@ -179,7 +180,7 @@
   &__row-value {
     color: $color-text-secondary;
     font-weight: 600;
-    font-size: $fs-xs;
+    font-size: calc(#{$fs-xs} * var(--inverse-scale, 1));
     flex-shrink: 0;
   }
 

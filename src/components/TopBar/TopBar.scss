@@ -3,6 +3,8 @@
 .topbar {
   display: flex;
   align-items: center;
+  // height: calc(32px * var(--inverse-scale, 1));
+  height: 32px;
   padding: 0 20px 11px 0px;
 
   &__workspace-pill {
@@ -12,14 +14,14 @@
     padding: 8px 12px;
     border: 1px solid #7B7B7B3D;
     border-radius: $radius-sm;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     font-weight: 400;
     color: $color-text-primary;
   }
 
   &__workspace-icon {
-    width: 14px;
-    height: 14px;
+    width: calc(14px * var(--inverse-scale, 1));
+    height: calc(14px * var(--inverse-scale, 1));
     color: #000000;
     flex-shrink: 0;
   }
@@ -37,8 +39,8 @@
     border: 1px solid#7B7B7B;
 
     svg {
-      width: 16px;
-      height: 18px;
+      width: calc(16px * var(--inverse-scale, 1));
+      height: calc(18px * var(--inverse-scale, 1));
       color: black;
     }
   }
@@ -47,8 +49,8 @@
     position: absolute;
     top: 8.8px;
     right: 7.1px;
-    width: 6px;
-    height: 6px;
+    width: calc(6px * var(--inverse-scale, 1));
+    height: calc(6px * var(--inverse-scale, 1));
     border-radius: 50%;
     background: red;
   }
@@ -61,13 +63,13 @@
     border: 1.5px solid #7B7B7B;
     border-radius: $radius-sm;
     background: $color-surface;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-primary;
   }
 
   &__chevron {
-    width: 10px;
-    height: 6px;
+    width: calc(10px * var(--inverse-scale, 1));
+    height: calc(6px * var(--inverse-scale, 1));
     color: black;
     flex-shrink: 0;
   }
@@ -77,13 +79,13 @@
   }
 
   &__avatar {
-    width: 30px;
-    height: 30px;
+    width: calc(30px * var(--inverse-scale, 1));
+    height: calc(30px * var(--inverse-scale, 1));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     font-weight: 600;
     color: #fff;
     border: 2px solid $color-surface;

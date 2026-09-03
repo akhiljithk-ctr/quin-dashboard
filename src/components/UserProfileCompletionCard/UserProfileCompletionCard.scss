@@ -17,7 +17,7 @@
   }
 
   &__info {
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     color: $color-text-muted;
   }
 
@@ -52,7 +52,7 @@
 
   &__legend-label {
     font-family: $font-family-mono;
-    font-size: $fs-sm;
+    font-size: calc(#{$fs-sm} * var(--inverse-scale, 1));
     font-weight: 400;
     color: $color-text-secondary;
     line-height: 1.3;

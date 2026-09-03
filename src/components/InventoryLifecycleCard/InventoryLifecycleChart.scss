@@ -29,8 +29,6 @@
   &__plot {
     flex: 1;
     min-width: 0;
-    display: flex;
-    flex-direction: column;
   }
 
   &__svg {
@@ -92,7 +90,6 @@
   &__x-axis {
     display: flex;
     justify-content: space-between;
-    padding-top: 6px;
     flex-shrink: 0;
   }
 
