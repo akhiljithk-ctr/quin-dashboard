@@ -3,12 +3,17 @@
 
 .inventory-failures-card {
   @include card;
+  flex: 1;
   min-height: 0;
+  max-height: 222px;
   overflow: hidden;
 
   &__header {
     flex-shrink: 0;
     margin-bottom: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   &__title {
@@ -25,9 +30,7 @@
   &__tabs {
     display: flex;
     gap: 4px;
-    background: $color-bg;
-    border-radius: $radius-sm;
-    padding: 3px;
+    border-radius: $radius-sm;  
     flex-shrink: 0;
   }
 
@@ -38,29 +41,42 @@
     font-size: $fs-xs;
     font-weight: 600;
     color: $color-text-secondary;
-    border-radius: $radius-sm;
+    border-radius: 6px;
     white-space: nowrap;
 
     &--active {
-      background: $color-surface;
+      background: #EBEBEB;
       color: $color-text-primary;
       box-shadow: $shadow-card;
     }
   }
 
   &__table-head {
-    display: grid;
-    grid-template-columns: minmax(0, 1.3fr) 50px minmax(0, 1fr);
+    display: flex;
+    // grid-template-columns: minmax(0, 1.3fr) 66px minmax(0, 1fr);
+    align-items: center;
+    font-family: $font-family-mono;
     font-size: 10px;
-    color: $color-text-muted;
-    font-weight: 600;
+    color: #101010c5;
+    font-weight: 400;
     flex-shrink: 0;
     margin-bottom: 6px;
     white-space: nowrap;
+    justify-content: space-between;
 
     span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
       @include ellipsis;
     }
+  }
+
+  &__sort-icon {
+    width: 7px;
+    height: 9px;
+    color: #000000;
+    flex-shrink: 0;
   }
 
   &__list {
@@ -68,26 +84,50 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     gap: 6px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__row {
     display: grid;
-    grid-template-columns: minmax(0, 1.3fr) 50px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.3fr) 66px minmax(0, 1fr);
     align-items: center;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 4px 10px 4px 0;
+    flex-shrink: 0;
   }
 
   &__row-sku {
     display: flex;
     align-items: center;
-    gap: 6px;
     min-width: 0;
+  }
+
+  &__row-icon {
+    width: 50px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
   }
 
   &__row-name {
     font-size: $fs-xs;
-    font-weight: 500;
+    font-weight: 400;
     @include ellipsis;
   }
 

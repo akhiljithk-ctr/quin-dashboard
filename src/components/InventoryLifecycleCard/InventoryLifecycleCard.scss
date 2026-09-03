@@ -3,7 +3,10 @@
 
 .inventory-lifecycle-card {
   @include card;
+  flex: 1;
   min-height: 0;
+  max-height: 222px;
+  width: 100%;
   overflow: hidden;
 
   &__header {

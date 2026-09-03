@@ -5,6 +5,8 @@
   @include card;
   min-height: 0;
   overflow: hidden;
+  max-width: 267.2px;
+  min-width: 267.2px;
 
   &__header {
     flex-shrink: 0;
