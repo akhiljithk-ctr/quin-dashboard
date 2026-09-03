@@ -75,12 +75,14 @@ function InventoryComplianceCard() {
       <div className="inventory-compliance-card__list">
         {SKU_COMPLIANCE.map((row, i) => (
           <div className="inventory-compliance-card__row" key={`${row.name}-${i}`}>
-            <span className="inventory-compliance-card__row-icon">
-              <img src={row.image} alt={row.name} />
-            </span>
             <div className="inventory-compliance-card__row-content">
               <div className="inventory-compliance-card__row-top">
+                <div className='invt-image-and-name'>
+                  <span className="inventory-compliance-card__row-icon">
+                  <img src={row.image} alt={row.name} />
+                </span>
                 <span className="inventory-compliance-card__row-name">{row.name}</span>
+                </div>
                 <span className="inventory-compliance-card__row-value">{row.compliance}%</span>
               </div>
               <div className="inventory-compliance-card__bar">
