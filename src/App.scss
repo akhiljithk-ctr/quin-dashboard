@@ -66,7 +66,7 @@
   display: flex;
   flex-direction: row;
   flex: 701 1 0;
-  min-width: calc(560px * var(--inverse-scale, 1));
+  min-width: calc(496px * var(--inverse-scale, 1));
   min-height: 0;
   gap: calc(6px * var(--inverse-scale, 1));
 }
@@ -75,7 +75,7 @@
   display: flex;
   flex-direction: column;
   flex: 427.8 1 0;
-  min-width: calc(340px * var(--inverse-scale, 1));
+  min-width: calc(300px * var(--inverse-scale, 1));
   min-height: 0;
   gap: 6px;
 }
@@ -83,7 +83,7 @@
 .pos_1_sec_2 {
   display: flex;
   flex: 267.2 1 0;
-  min-width: calc(220px * var(--inverse-scale, 1));
+  min-width: calc(190px * var(--inverse-scale, 1));
   min-height: 0;
 }
 
@@ -91,7 +91,7 @@
   display: flex;
   flex-direction: column;
   flex: 740 1 0;
-  min-width: calc(600px * var(--inverse-scale, 1));
+  min-width: calc(486px * var(--inverse-scale, 1));
   min-height: 0;
   gap: 6px;
 }
@@ -99,7 +99,7 @@
 .pos_2_sec_1 {
   display: flex;
   flex-direction: row;
-  min-width: calc(580px * var(--inverse-scale, 1));
+  min-width: calc(486px * var(--inverse-scale, 1));
   min-height: 0;
   gap: calc(6px * var(--inverse-scale, 1));
 }
@@ -107,7 +107,7 @@
 .pos_2_sec_2 {
   @include card;
   flex-direction: row;
-  min-width: calc(580px * var(--inverse-scale, 1));
+  min-width: calc(480px * var(--inverse-scale, 1));
   min-height: 0;
   max-height: 254px;
   padding: 0;

@@ -10,7 +10,7 @@
   // original pinned-px ratio (427.5 : 740) as the flex-grow weight —
   // preserves the row/row-2 boundary alignment at every viewport width.
   flex: 427.5 1 0;
-  min-width: calc(320px * var(--inverse-scale, 1));
+  min-width: calc(280px * var(--inverse-scale, 1));
   background: #fafafa;
   border: 1px solid #e2e8f0;
   border-radius: 10px;

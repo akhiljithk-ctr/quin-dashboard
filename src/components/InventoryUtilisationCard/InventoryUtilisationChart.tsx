@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react'
+
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct']
 
 interface DataPoint {
@@ -24,6 +26,13 @@ const HEIGHT = 170
 const MAX_VALUE = 5000
 const GRID_VALUES = [0, 2500, 5000]
 
+// preserveAspectRatio="none" stretches the SVG's coordinate space
+// non-uniformly to fill its (responsive) container, so a single rx
+// value doesn't render as a symmetric on-screen radius. We measure the
+// actual rendered box and derive separate rx/ry in SVG-user-space so
+// the corner looks like a consistent DESIRED_RADIUS_PX on screen.
+const DESIRED_RADIUS_PX = 4
+
 function yAt(value: number) {
   return HEIGHT - (value / MAX_VALUE) * HEIGHT
 }
@@ -35,6 +44,26 @@ function InventoryUtilisationChart() {
   const barWidth = 7.5
   const barGap = 2
   const totalGroupBarsWidth = 3 * barWidth + 2 * barGap
+
+  const svgRef = useRef<SVGSVGElement>(null)
+  const [scale, setScale] = useState({ x: 1, y: 1 })
+
+  useEffect(() => {
+    const el = svgRef.current
+    if (!el) return
+
+    const observer = new ResizeObserver((entries) => {
+      const { width, height } = entries[0].contentRect
+      if (width > 0 && height > 0) {
+        setScale({ x: width / WIDTH, y: height / HEIGHT })
+      }
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  const rx = DESIRED_RADIUS_PX / scale.x
+  const ry = DESIRED_RADIUS_PX / scale.y
 
   return (
     <div className="inventory-utilisation-chart">
@@ -50,6 +79,7 @@ function InventoryUtilisationChart() {
 
       <div className="inventory-utilisation-chart__plot">
         <svg
+          ref={svgRef}
           className="inventory-utilisation-chart__svg"
           viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
           preserveAspectRatio="none"
@@ -79,7 +109,8 @@ function InventoryUtilisationChart() {
                       y={y}
                       width={barWidth}
                       height={height}
-                      rx={barWidth / 2}
+                      rx={rx}
+                      ry={ry}
                     />
                   )
                 })}
@@ -101,4 +132,3 @@ function InventoryUtilisationChart() {
 }
 
 export default InventoryUtilisationChart
-
