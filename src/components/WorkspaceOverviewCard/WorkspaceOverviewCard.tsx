@@ -17,6 +17,9 @@ const TOP_SKUS: SkuRow[] = [
   { name: 'Armet Pro', category: 'Head Protection', total: 534, change: -2, image: armetProImg },
   { name: 'V-Fit Harness', category: 'Harness', total: 489, change: 5, image: vFitHarnessImg },
   { name: 'Traverse Full Brim', category: 'Head Protection', total: 412, change: 5, image: traverseFullBrimImg },
+  { name: 'PIP RZRBack', category: 'Head Protection', total: 400, change: 3, image: armetProImg },
+  { name: 'ICE Evolution Safety', category: 'Eyewear', total: 400, change: -1, image: traverseFullBrimImg },
+  { name: 'Miller H700 Safety', category: 'Harness', total: 355, change: 4, image: vFitHarnessImg },
 ]
 
 function SortIcon() {
