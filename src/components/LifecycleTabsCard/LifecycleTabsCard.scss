@@ -5,8 +5,7 @@
   display: flex;
   flex-direction: column;
   flex: 2 1 0;
-  min-width: calc(301.6px * var(--inverse-scale, 1));
-  max-width: calc(301.6px * var(--inverse-scale, 1));
+  min-width: calc(240px * var(--inverse-scale, 1));
   min-height: 0;
   padding: $card-padding; 
   overflow: hidden;

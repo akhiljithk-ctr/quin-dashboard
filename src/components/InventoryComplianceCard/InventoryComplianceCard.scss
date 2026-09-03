@@ -5,8 +5,7 @@
   @include card;
   min-height: 0;
   overflow: hidden;
-  max-width: calc(267.2px * var(--inverse-scale, 1));
-  min-width: calc(267.2px * var(--inverse-scale, 1));
+  width: 100%;
   max-height: calc(445.1875px * var(--inverse-scale, 1));
 
   &__header {

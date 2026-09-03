@@ -4,9 +4,7 @@
 .inventory-utilisation-card {
   @include card;
   overflow: hidden;
-  width: calc(427.8px * var(--inverse-scale, 1));
-  min-width: calc(427.8px * var(--inverse-scale, 1));
-  max-width: calc(427.8px * var(--inverse-scale, 1));
+  width: 100%;
   max-height: calc(222px * var(--inverse-scale, 1));
   padding: 14px 14px 7px 14px;
 

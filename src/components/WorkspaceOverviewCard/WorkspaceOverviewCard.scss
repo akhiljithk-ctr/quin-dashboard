@@ -4,13 +4,13 @@
 .workspace-overview-card {
   @include card;
   min-height: 0;
-  // min-width: 0;
-  // width: calc((100% - calc(264.5px * var(--inverse-scale, 1)) - 18px) * 0.4);
 
-  // for figma style
-  width: calc((427.5px * var(--inverse-scale, 1)));
-  min-width: calc((427.5px * var(--inverse-scale, 1)));
-  max-width: calc((427.5px * var(--inverse-scale, 1)));
+  // fluid: shares row-1's remaining space (after WorkspaceCard's fixed
+  // width) proportionally with InventoryOverviewCard, using their
+  // original pinned-px ratio (427.5 : 740) as the flex-grow weight —
+  // preserves the row/row-2 boundary alignment at every viewport width.
+  flex: 427.5 1 0;
+  min-width: calc(320px * var(--inverse-scale, 1));
   background: #fafafa;
   border: 1px solid #e2e8f0;
   border-radius: 10px;

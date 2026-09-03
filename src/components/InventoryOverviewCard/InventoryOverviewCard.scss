@@ -4,16 +4,14 @@
 .inventory-overview-card {
   @include card;
   min-height: 0;
-  // min-width: 0;
-  // 60% of the row's remaining width after WorkspaceCard's fixed
-  // 264.51px and its two 9px gaps — pairs with WorkspaceOverviewCard's
-  // 40% share, scaling down instead of overflowing on narrower screens.
-  // width: calc((100% - calc(264.51px * var(--inverse-scale, 1)) - 18px) * 0.6);
 
-  width: calc(740px * var(--inverse-scale, 1));
-  min-width: calc(740px * var(--inverse-scale, 1));
-  max-width: calc(740px * var(--inverse-scale, 1));
-  
+  // fluid: shares row-1's remaining space (after WorkspaceCard's fixed
+  // width) proportionally with WorkspaceOverviewCard, using their
+  // original pinned-px ratio (427.5 : 740) as the flex-grow weight —
+  // preserves the row/row-2 boundary alignment at every viewport width.
+  flex: 740 1 0;
+  min-width: calc(390px * var(--inverse-scale, 1));
+
   overflow: hidden;
   padding: 11px 13px 8px 13px;
 

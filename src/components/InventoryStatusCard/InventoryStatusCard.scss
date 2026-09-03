@@ -5,9 +5,8 @@
   @include card;
   min-height: 0;
   overflow: hidden;
-  width: calc(400px * var(--inverse-scale, 1));
-  min-width: calc(400px * var(--inverse-scale, 1));
-  max-width: calc(400px * var(--inverse-scale, 1));
+  flex: 400 1 0;
+  min-width: calc(320px * var(--inverse-scale, 1));
   // min-height: calc(212px * var(--inverse-scale, 1));
   padding: 9px;
 
